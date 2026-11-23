@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Latihan 3 - Fungsi dan DOM</title>
+</head>
+<body>
+    <h3>Latihan 3: Sapaan Sesuai Waktu</h3>
+    <input type="text" id="nama" placeholder="Nama Anda">
+    <button onclick="sapa()">Sapa</button>
+    <p id="hasil"></p>
+
+    <script>
+        function sapa() {
+            let nama = document.getElementById("nama").value;
+            let jam = new Date().getHours();
+            let ucapan = "";
+
+            if (jam < 12) {
+                ucapan = "Selamat pagi";
+            } else if (jam < 18) {
+                ucapan = "Selamat siang";
+            } else {
+                ucapan = "Selamat malam";
+            }
+
+            document.getElementById("hasil").textContent = ucapan + ", " + nama + "!";
+        }
+    </script>
+</body>
+</html>
